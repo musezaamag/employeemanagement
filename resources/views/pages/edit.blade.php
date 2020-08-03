@@ -9,7 +9,7 @@
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <h3 class="register-heading">Edit Employee Data</h3>
                     <div class="row register-form">
-                        <form action="{{route('information.edit', [$id])}}" method="post">
+                        <form action="{{route('employees.edit', [$id])}}" method="post">
                             {{ csrf_field() }}
                             {{ method_field('PUT') }}
                             <input type="hidden" name="id" value="{{$id}}">

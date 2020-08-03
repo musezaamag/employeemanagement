@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 /* home */
-Route::get('/','InformationController@index');
-Route::get('/information', 'InformationController@index')->name('information.index');
-Route::get('/information/{id}', 'InformationController@byid')->name('information.{id}');
-Route::post('/information','informationController@store')->name('information.store');
-Route::PUT('/information/{id}','informationController@edit')->name('information.edit');
-Route::DELETE('/information/{id}','InformationController@delete')->name('information.delete');
+Route::get('/','EmployeesController@index');
+Route::get('/employees', 'EmployeesController@index')->name('employees.index');
+Route::get('/employees/{id}', 'EmployeesController@byid')->name('employees.{id}');
+Route::post('/employees','EmployeesController@store')->name('employees.store');
+Route::PUT('/employees/{id}','EmployeesController@edit')->name('employees.edit');
+Route::DELETE('/employees/{id}','EmployeesController@delete')->name('employees.delete');
 Route::get('/form','FormController@index')->name('form.index');
 Route::get('/edit/{id}','FormController@edit')->name('form.edit');
 Route::PUT('/edit/{id}','FormController@edit')->name('form.edit');
