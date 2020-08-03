@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\information;
+use App\employees;
 use Carbon\Carbon;
 
 
@@ -15,24 +15,24 @@ class FormController extends Controller
     }
     public function store()
     {
-        $insert_information = new information();
+        $insert_employee = new employees();
         $data = request()->validate([
             'firstname' => 'required'
         ]);
-        $insert_information->firstname = request('firstname');
-        $insert_information->lastname = request('lastname');
-        $insert_information->birthday = request('birthday');
-        $insert_information->position = request('position');
-        $insert_information->age = Carbon::parse(request('birthday'))->age;
+        $insert_employee->firstname = request('firstname');
+        $insert_employee->lastname = request('lastname');
+        $insert_employee->birthday = request('birthday');
+        $insert_employee->position = request('position');
+        $insert_employee->age = Carbon::parse(request('birthday'))->age;
 
-        $insert_information->save();
+        $insert_employee->save();
 
         return ;
         
     }
     public function edit($element)
     {
-        $information = information::find($element);
-        return view('pages.edit',$information);
+        $employees = employees::find($element);
+        return view('pages.edit',$employees);
     }
 }

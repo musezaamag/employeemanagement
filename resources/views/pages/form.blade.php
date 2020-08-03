@@ -1,5 +1,5 @@
 @extends('layouts.master_template')
-@section('title') Add Information @endsection
+@section('title') Add employees @endsection
 @section('content')
 
 <div class="container register">
@@ -9,7 +9,7 @@
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <h3 class="register-heading">Employee Store Data</h3>
                     <div class="row register-form">
-                        <form action="/information" method="post">
+                        <form action="/employees" method="post">
                             <h5>Firstname</h5>
                             <input type="text" placeholder="FirstName" name="firstname" autocomplete="off">
                             <h5>Lastname</h5>

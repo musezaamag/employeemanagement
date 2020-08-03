@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-dark">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <h4 style="color:red">EMPLOYEE INFORMATION MANAGEMENT </h4>
+            <h4 style="color:red">EMPLOYEE'employees MANAGEMENT </h4>
           </a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
             data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
@@ -14,7 +14,7 @@
                     <a class="nav-link text-white" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                <a class="nav-link text-white" href="{{route('information.index')}}">All Employee</a>
+                <a class="nav-link text-white" href="{{route('employees.index')}}">All Employee</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link text-white" href="{{route('form.index')}}">Add Employee</a>

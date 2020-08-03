@@ -22,11 +22,11 @@
                                   </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($information as $c)
+                                    @foreach($employees as $c)
                                         <tr>
-                                        <th scope="row"><a href="/information/{{$c->id}}">{{$c->id}}</a></th>
-                                        <td><a href="/information/{{$c->id}}">{{$c->firstname}}</a></td>
-                                            <td><a href="/information/{{$c->id}}">{{$c->lastname}}</a></td>
+                                        <th scope="row"><a href="/employees/{{$c->id}}">{{$c->id}}</a></th>
+                                        <td><a href="/employees/{{$c->id}}">{{$c->firstname}}</a></td>
+                                            <td><a href="/employees/{{$c->id}}">{{$c->lastname}}</a></td>
                                             <td>{{$c->birthday}}</td>
                                             <td>{{$c->age}}</td>
                                             <td>{{$c->position}}</td>
@@ -35,7 +35,7 @@
                                             {{ method_field('PUT') }}
                                             <button type="submit">Edit</button>
                                             </form>
-                                            <form method="POST" action="{{ route('information.delete', [$c->id]) }}">
+                                            <form method="POST" action="{{ route('employees.delete', [$c->id]) }}">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
                                             <button type="submit">Delete</button>
@@ -45,7 +45,7 @@
                                   @endforeach
                                 </tbody>
                               </table>
-                              {{$information ->links()}}
+                              {{$employees ->links()}}
                         </div>
                     </div> 
                 </div>
