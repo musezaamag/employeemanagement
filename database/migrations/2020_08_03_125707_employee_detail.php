@@ -11,7 +11,8 @@ class EmployeeDetail extends Migration
      *
      * @return void
      */
-    public function up()
+    //before migration create database name "employees"
+    public function up() //migration of table in database contain 6 data intable
     {
         Schema::create('informations', function (Blueprint $table) {
             $table->bigIncrements('id');

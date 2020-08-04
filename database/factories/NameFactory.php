@@ -5,7 +5,7 @@
 use App\Model;
 use Faker\Generator as Faker;
 
-//function to generate fake name to database 
+//function to generate fake data to database 
 
 $factory->define(App\information::class, function (Faker $faker) {
     return [
