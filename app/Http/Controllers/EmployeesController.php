@@ -13,27 +13,26 @@ class EmployeesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() //Function in index page retrieve data from model(database) and return data to home page.
     {
-        //protected $table = 'employeess';
-        $employees = employees::orderBy('id')->paginate(20);
-        $countemployee = employees::count();
-        //return($employees);
-        return(view('pages.employees',[
-            'employees' => $employees,
+        $employees = employees::orderBy('id')->paginate(20); //orderby in and show only 20 data in 1 page
+        $countemployee = employees::count(); //count how many employee
+        return(view('pages.employees',[   
+            'employees' => $employees,  
             'countemployee' => $countemployee
         ]));
     }
-    public function byid($element){
+    public function byid($element){ //function recieve $id from route and return only that information
         $employees = employees::where('id','=',$element)->paginate(20);
         return view('pages.employees',[
             'employees' => $employees
         ]);
     }
-    public function store()
+    public function store() //Function store new employee to database
     {
         $insert_employees = new employees();
-        $data = request()->validate([
+        //validate required
+        $data = request()->validate([ 
             'firstname' => 'required',
             'lastname'  => 'required'
         ]);
@@ -41,23 +40,23 @@ class EmployeesController extends Controller
         $insert_employees->lastname = request('lastname');
         $insert_employees->birthday = request('birthday');
         $insert_employees->position = request('position');
-        $insert_employees->age = Carbon::parse(request('birthday'))->age;
+        $insert_employees->age = Carbon::parse(request('birthday'))->age; //calculate age and input to database
 
         $insert_employees->save();
 
-        $employees = employees::orderBy('id')->paginate(20);
+        $employees = employees::orderBy('id')->paginate(20); //retrieve data again after finished input data
 
         return view('pages.employees',[
             'employees' => $employees
         ]);
     }
-    public function delete($id)
+    public function delete($id) //function remove data from database
     {
-        $employees = employees::findOrFail($id);
+        $employees = employees::findOrFail($id); //just incase not found its gonna return 404
         $employees->delete();
         return redirect('/employees');
     }
-    public function edit()
+    public function edit() //function to change database by id
     {
         $id = request('id');
         $employees = employees::findOrFail($id);

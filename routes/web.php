@@ -23,6 +23,8 @@ Route::get('/form','FormController@index')->name('form.index');
 Route::get('/edit/{id}','FormController@edit')->name('form.edit');
 Route::PUT('/edit/{id}','FormController@edit')->name('form.edit');
 
+// ALL ROUTE of employee 
+
 
 
 
